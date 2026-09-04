@@ -73,10 +73,10 @@ function Contact() {
                   PHONE
                 </p>
                 <a
-  href="tel:+918726446227"
+  href="tel:+919448964226"
   className="mt-2 block text-sm transition-colors duration-300 hover:text-[#a58b5b]"
 >
-  +91 8726446227
+  +91 9448964226
 </a>
               </div>
 
@@ -93,13 +93,21 @@ function Contact() {
               </div>
 
               <div>
-                <p className="text-[10px] tracking-[0.2em] text-[#77736c]">
-                  LOCATION
-                </p>
-                <p className="mt-2 text-sm">
-                  [LOCATION]
-                </p>
-              </div>
+  <p className="text-[10px] tracking-[0.2em] text-[#77736c]">
+    LOCATION
+  </p>
+
+  <a
+    href="https://maps.google.com/?q=15.855856,74.529381"
+    target="_blank"
+    rel="noreferrer"
+    className="mt-2 block text-sm leading-6 transition-colors duration-300 hover:text-[#a58b5b]"
+  >
+    7th Cross, Ujjwal Nagar
+    <br />
+    Belagavi, Karnataka
+  </a>
+</div>
 
             </div>
 

@@ -1,6 +1,34 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 function ProjectCard({ project, index, onClick }) {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const imageX = useSpring(useTransform(mouseX, [-0.5, 0.5], [-8, 8]), {
+    stiffness: 100,
+    damping: 20,
+  });
+
+  const imageY = useSpring(useTransform(mouseY, [-0.5, 0.5], [-8, 8]), {
+    stiffness: 100,
+    damping: 20,
+  });
+
+  const handleMouseMove = (event) => {
+    const rect = event.currentTarget.getBoundingClientRect();
+
+    const x = (event.clientX - rect.left) / rect.width - 0.5;
+    const y = (event.clientY - rect.top) / rect.height - 0.5;
+
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
   return (
     <motion.article
       layout
@@ -25,12 +53,20 @@ function ProjectCard({ project, index, onClick }) {
       className="group cursor-pointer"
     >
       {/* IMAGE */}
-      <div className="relative aspect-[4/5] overflow-hidden bg-[#dedbd4] md:aspect-[5/6]">
-
-        <img
+      <div
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className="relative aspect-[4/5] overflow-hidden bg-[#dedbd4] md:aspect-[5/6]"
+      >
+        <motion.img
           src={project.image}
           alt={project.title}
-          className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]"
+          style={{
+            x: imageX,
+            y: imageY,
+            scale: 1.06,
+          }}
+          className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.1]"
         />
 
         {/* DARK HOVER OVERLAY */}
@@ -45,9 +81,7 @@ function ProjectCard({ project, index, onClick }) {
 
         {/* HOVER INFORMATION */}
         <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-
           <div className="translate-y-6 opacity-0 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-100">
-
             <p className="mb-3 text-[10px] tracking-[0.22em] text-[#d8c7a5]">
               {project.category}
             </p>
@@ -57,29 +91,30 @@ function ProjectCard({ project, index, onClick }) {
             </h3>
 
             <div className="mt-5 flex items-center justify-between border-t border-white/30 pt-4">
-
               <span className="text-[10px] tracking-[0.15em] text-white/70">
                 {project.location}
               </span>
 
-              <span className="text-lg text-white transition-transform duration-500 group-hover:translate-x-1">
+              <span className="text-lg text-white transition-transform duration-500 group-hover:translate-x-2">
                 →
               </span>
-
             </div>
-
           </div>
-
         </div>
 
         {/* SUBTLE BORDER */}
         <div className="pointer-events-none absolute inset-0 border border-white/0 transition-all duration-500 group-hover:inset-3 group-hover:border-white/25" />
 
+        {/* VIEW PROJECT LABEL */}
+        <div className="pointer-events-none absolute right-5 top-5 translate-y-2 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+          <span className="text-[9px] tracking-[0.2em] text-white/80">
+            VIEW PROJECT
+          </span>
+        </div>
       </div>
 
       {/* MOBILE / DEFAULT INFO */}
       <div className="mt-5 flex items-start justify-between gap-6">
-
         <div>
           <p className="text-[9px] tracking-[0.2em] text-[#a58b5b]">
             {project.category}
@@ -93,7 +128,6 @@ function ProjectCard({ project, index, onClick }) {
         <span className="mt-1 text-[10px] tracking-[0.15em] text-[#77736c]">
           {String(index + 1).padStart(2, "0")}
         </span>
-
       </div>
     </motion.article>
   );

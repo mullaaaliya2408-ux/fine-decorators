@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import heroImage from "../assets/hero.png";
-
+import MagneticButton from "../components/MagneticButton";
 function Hero() {
   const { scrollY } = useScroll();
 
@@ -104,27 +104,57 @@ function Hero() {
             }}
             className="mt-9 flex flex-wrap gap-3"
           >
-            <a
-              href="#work"
-              className="group inline-flex items-center gap-4 border border-white/70 bg-black/20 px-6 py-4 text-xs font-medium tracking-[0.15em] text-white backdrop-blur-sm transition-all duration-500 hover:border-[#d8c7a5] hover:bg-[#a58b5b]/80"
-            >
-              EXPLORE OUR WORK
+            <MagneticButton
 
-              <span className="transition-transform duration-500 group-hover:translate-x-1">
-                →
-              </span>
-            </a>
+  onClick={() =>
 
-            <a
-              href="#contact"
-              className="group inline-flex items-center gap-4 border border-white/60 bg-transparent px-6 py-4 text-xs font-medium tracking-[0.15em] text-white transition-all duration-500 hover:border-[#d8c7a5] hover:bg-[#171717]/80"
-            >
-              GET A FREE QUOTE
+    document.getElementById("work")?.scrollIntoView({
 
-              <span className="transition-transform duration-500 group-hover:translate-x-1">
-                →
-              </span>
-            </a>
+      behavior: "smooth",
+
+    })
+
+  }
+
+  className="group inline-flex items-center gap-4 border border-white/70 bg-black/20 px-6 py-4 text-xs font-medium tracking-[0.15em] text-white backdrop-blur-sm transition-all duration-500 hover:border-[#d8c7a5] hover:bg-[#a58b5b]/80"
+
+>
+
+  EXPLORE OUR WORK
+
+  <span className="transition-transform duration-500 group-hover:translate-x-1">
+
+    →
+
+  </span>
+
+</MagneticButton>
+
+            <MagneticButton
+
+  onClick={() =>
+
+    document.getElementById("contact")?.scrollIntoView({
+
+      behavior: "smooth",
+
+    })
+
+  }
+
+  className="group inline-flex items-center gap-4 border border-white/60 bg-transparent px-6 py-4 text-xs font-medium tracking-[0.15em] text-white transition-all duration-500 hover:border-[#d8c7a5] hover:bg-[#171717]/80"
+
+>
+
+  GET A FREE QUOTE
+
+  <span className="transition-transform duration-500 group-hover:translate-x-1">
+
+    →
+
+  </span>
+
+</MagneticButton>
           </motion.div>
         </div>
       </motion.div>

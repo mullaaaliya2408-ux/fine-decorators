@@ -1,3 +1,4 @@
+import LoadingScreen from "./components/LoadingScreen";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -12,6 +13,7 @@ import Testimonials from "./sections/Testimonials";
 import Contact from "./sections/Contact";
 
 import useScrollProgress from "./hooks/useScrollProgress";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 function App() {
   const scrollProgress = useScrollProgress();
@@ -24,8 +26,10 @@ function App() {
         style={{
           width: `${scrollProgress * 100}%`,
         }}
+
       />
 
+      <LoadingScreen />
       <Navbar />
 
       <main>
@@ -41,6 +45,7 @@ function App() {
       </main>
 
       <Footer />
+      <WhatsAppButton/>
     </>
   );
 }

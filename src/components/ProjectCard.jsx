@@ -59,15 +59,32 @@ function ProjectCard({ project, index, onClick }) {
         className="relative aspect-[4/5] overflow-hidden bg-[#dedbd4] md:aspect-[5/6]"
       >
         <motion.img
-          src={project.image}
-          alt={project.title}
-          style={{
-            x: imageX,
-            y: imageY,
-            scale: 1.06,
-          }}
-          className="h-full w-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.1]"
-        />
+  src={project.image}
+  alt={project.title}
+  initial={{
+    opacity: 0,
+    scale: 1.08,
+  }}
+  whileInView={{
+    opacity: 1,
+    scale: 1,
+  }}
+  viewport={{
+    once: true,
+    amount: 0.25,
+  }}
+  transition={{
+    opacity: {
+      duration: 1.2,
+      ease: "easeOut",
+    },
+    scale: {
+      duration: 1.5,
+      ease: [0.22, 1, 0.36, 1],
+    },
+  }}
+  className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.05]"
+/>
 
         {/* DARK HOVER OVERLAY */}
         <div className="absolute inset-0 bg-black/0 transition-colors duration-700 group-hover:bg-black/45" />

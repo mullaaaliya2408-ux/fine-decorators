@@ -20,6 +20,7 @@ function Navbar() {
     { name: "About", href: "#about" },
     { name: "Our Work", href: "#work" },
     { name: "Services", href: "#services" },
+    {name:"Behind The Craft", href: "#behind-the-craft"},
     { name: "Experience", href: "#experience" },
     { name: "Our Team", href: "#team" },
     { name: "Contact", href: "#contact" },

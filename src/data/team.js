@@ -7,7 +7,7 @@ export const team = [
     role: "FOUNDER / OWNER",
     experience: "[20+]",
     image: t1,
-    bio: "[SHORT BIO ABOUT THE OWNER]",
+    
   },
   {
     id: 2,
@@ -15,6 +15,6 @@ export const team = [
     role: "CO-OWNER",
     experience: "[10+]",
     image: t2,
-    bio: "[SHORT BIO ABOUT THE SUB-OWNER]",
+    
   },
 ];

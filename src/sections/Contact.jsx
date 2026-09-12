@@ -94,7 +94,7 @@ function Contact() {
 
               <div>
   <p className="text-[10px] tracking-[0.2em] text-[#77736c]">
-    LOCATION
+    7th cross, ujjwal nagar,belagavi,karnataka
   </p>
 
   <a
@@ -115,14 +115,16 @@ function Contact() {
             <div className="mt-12 flex flex-wrap gap-3">
 
               <a
-                href="tel:[PHONE NUMBER]"
+                href="tel:+919448964226"
                 className="border border-[#171717]/30 px-5 py-3 text-[10px] font-medium tracking-[0.15em] transition-all duration-300 hover:bg-[#171717] hover:text-[#f4f1eb]"
               >
                 CALL US
               </a>
 
               <a
-                href="#"
+                href="https://wa.me/919448964226"
+target="_blank"
+rel="noreferrer"
                 className="border border-[#171717]/30 px-5 py-3 text-[10px] font-medium tracking-[0.15em] transition-all duration-300 hover:bg-[#a58b5b] hover:text-white"
               >
                 WHATSAPP

@@ -22,7 +22,7 @@ function LoadingScreen() {
             opacity: 0,
             scale: 1.02,
             transition: {
-              duration: 1.2,
+              duration: 0.6,
               ease: [0.22, 1, 0.36, 1],
             },
           }}

@@ -75,7 +75,7 @@ function Footer() {
   href="tel:+918726446227"
   className="mt-2 block text-sm transition-colors duration-300 hover:text-[#a58b5b]"
 >
-  +91 8726446227
+  +91 9448964226
 </a>
               <a
   href="mailto:finedecorators397@gmail.com"
@@ -83,7 +83,7 @@ function Footer() {
 >
   finedecorators397@gmail.com
 </a>
-              <p>[LOCATION]</p>
+              <p>7th cross, ujjwal nagar,belagavi,karnataka</p>
             </div>
 
             <a

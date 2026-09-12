@@ -121,3 +121,55 @@ section {
 main {
   overflow: hidden;
 }
+@keyframes luxuryGradient {
+  0% {
+    transform: translate3d(-5%, -3%, 0) scale(1);
+  }
+
+  25% {
+    transform: translate3d(4%, -6%, 0) scale(1.05);
+  }
+
+  50% {
+    transform: translate3d(7%, 4%, 0) scale(1.08);
+  }
+
+  75% {
+    transform: translate3d(-4%, 7%, 0) scale(1.04);
+  }
+
+  100% {
+    transform: translate3d(-5%, -3%, 0) scale(1);
+  }
+}
+
+.animate-luxury-gradient {
+  animation: luxuryGradient 18s ease-in-out infinite;
+  will-change: transform;
+}
+@keyframes luxuryGradient {
+  0% {
+    transform: translate3d(-5%, -3%, 0) scale(1);
+  }
+
+  25% {
+    transform: translate3d(4%, -6%, 0) scale(1.05);
+  }
+
+  50% {
+    transform: translate3d(7%, 4%, 0) scale(1.08);
+  }
+
+  75% {
+    transform: translate3d(-4%, 7%, 0) scale(1.04);
+  }
+
+  100% {
+    transform: translate3d(-5%, -3%, 0) scale(1);
+  }
+}
+
+.animate-luxury-gradient {
+  animation: luxuryGradient 18s ease-in-out infinite;
+  will-change: transform;
+}

@@ -14,6 +14,7 @@ import Contact from "./sections/Contact";
 
 import useScrollProgress from "./hooks/useScrollProgress";
 import WhatsAppButton from "./components/WhatsAppButton";
+import BehindTheCraft from "./sections/BehindTheCraft";
 
 function App() {
   const scrollProgress = useScrollProgress();
@@ -36,6 +37,7 @@ function App() {
         <Hero />
         <About />
         <Projects />
+        <BehindTheCraft/>
         <Services />
         <Experience />
         <Team />

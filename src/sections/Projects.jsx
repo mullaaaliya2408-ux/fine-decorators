@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { projects } from "../data/projects";
 import ProjectCard from "../components/ProjectCard";
 import ProjectLightbox from "../components/ProjectLightbox";
+import kitchen from "../assets/projects/kitchen.jpg";
 
 function Projects() {
   const [activeCategory, setActiveCategory] = useState("ALL");
@@ -101,7 +102,7 @@ function Projects() {
       "md:col-span-8",
       "md:col-span-4 md:mt-24",
       "md:col-span-4 md:-mt-8",
-      "md:col-span-8",
+      "md:col-span-4",
     ];
 
     return (

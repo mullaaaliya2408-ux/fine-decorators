@@ -26,6 +26,49 @@ function Experience() {
     },
   ];
 
+  const projectLocations = [
+    {
+      state: "KARNATAKA",
+      cities: [
+        "Shindagi",
+        "Raichur",
+        "Karwar",
+        "Bailhongal",
+        "Belagavi",
+        "Athani",
+        "Saundatti",
+        "Hindwadi",
+        "Hubli",
+        "Bagalkot",
+        "Dharwad",
+        "Bangalore",
+        "Nipani",
+      ],
+    },
+    {
+      state: "MAHARASHTRA",
+      cities: [
+        "Daddi",
+        "Peeranwadi",
+        "Solapur",
+        "Kudal",
+        "Pune",
+      ],
+    },
+    {
+      state: "TELANGANA",
+      cities: ["Secunderabad"],
+    },
+    {
+      state: "GOA",
+      cities: [],
+    },
+    {
+      state: "RAJASTHAN",
+      cities: [],
+    },
+  ];
+
   return (
     <section
       id="experience"
@@ -92,14 +135,12 @@ function Experience() {
               className="border-b border-[#171717]/15 py-10 sm:px-6 lg:border-b-0 lg:border-r lg:px-8 lg:py-12 first:lg:pl-0 last:lg:border-r-0"
             >
               <div className="flex items-start">
-
                 <span className="font-serif text-5xl leading-none md:text-7xl">
-  <Counter
-    value={stat.value}
-    suffix={stat.value === null ? "" : stat.suffix}
-  />
-</span>
-
+                  <Counter
+                    value={stat.value}
+                    suffix={stat.value === null ? "" : stat.suffix}
+                  />
+                </span>
               </div>
 
               <p className="mt-5 text-[10px] tracking-[0.2em] text-[#77736c]">
@@ -107,6 +148,75 @@ function Experience() {
               </p>
             </motion.div>
           ))}
+
+        </div>
+
+        {/* PROJECT LOCATIONS */}
+        <div className="mt-24 border-t border-[#171717]/15 pt-12 md:mt-32 md:pt-16">
+
+          <div className="grid gap-8 md:grid-cols-2 md:items-end">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <p className="mb-4 text-xs tracking-[0.3em] text-[#a58b5b]">
+                OUR REACH
+              </p>
+
+              <h3 className="text-4xl leading-none md:text-6xl">
+                PROJECTS
+                <br />
+                COMPLETED.
+              </h3>
+            </motion.div>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.15, duration: 0.7 }}
+              className="max-w-md text-sm leading-7 text-[#77736c] md:justify-self-end"
+            >
+              Our work spans multiple cities and regions, bringing
+              thoughtfully crafted ceiling and interior solutions to
+              residential and commercial spaces.
+            </motion.p>
+          </div>
+
+          {/* LOCATIONS */}
+          <div className="mt-14 grid border-t border-[#171717]/15 md:grid-cols-2 lg:grid-cols-3">
+
+            {projectLocations.map((location, index) => (
+              <motion.div
+                key={location.state}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                  duration: 0.7,
+                  delay: index * 0.08,
+                }}
+                className="border-b border-[#171717]/15 py-8 md:px-6 lg:px-8 first:md:pl-0"
+              >
+                <p className="text-[10px] tracking-[0.25em] text-[#a58b5b]">
+                  {location.state}
+                </p>
+
+                {location.cities.length > 0 ? (
+                  <p className="mt-5 text-sm leading-8 text-[#77736c]">
+                    {location.cities.join("  ·  ")}
+                  </p>
+                ) : (
+                  <p className="mt-5 text-sm leading-8 text-[#77736c]">
+                    Projects across the state
+                  </p>
+                )}
+              </motion.div>
+            ))}
+
+          </div>
 
         </div>
 

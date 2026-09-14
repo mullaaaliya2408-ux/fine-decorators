@@ -1,9 +1,13 @@
 import project01 from "../assets/projects/p1.jpg";
 import project02 from "../assets/projects/p2.jpg";
+import p1_2 from "../assets/projects/p1-2.jpg";
+import p1_3 from "../assets/projects/p1-3.jpg";
 import project03 from "../assets/projects/p3.jpg";
 import project04 from "../assets/projects/p4.jpg";
 import project05 from "../assets/projects/p5.jpg";
 import project06 from "../assets/projects/p6.jpg";
+import kitchen from "../assets/projects/kitchen.jpg";
+import bathroom from "../assets/projects/bathroom.jpg";
 
 export const projects = [
   {
@@ -22,6 +26,7 @@ export const projects = [
     type: "RESIDENTIAL",
     location: "[LOCATION]",
     image: project02,
+    gallery: [p1_2, p1_3],
   },
 
   {
@@ -56,6 +61,22 @@ export const projects = [
     location: "[LOCATION]",
     image: project06,
   },
+  {
+  id: 7,
+  title: "Modern Kitchen",
+  category: "RESIDENTIAL",
+  type: "RESIDENTIAL",
+  location: "[LOCATION]",
+  image: kitchen,
+},
+{
+  id: 8,
+  title: "Modern Bathroom",
+  category: "RESIDENTIAL",
+  type: "RESIDENTIAL",
+  location: "[LOCATION]",
+  image: bathroom,
+},
 
  
 ];
